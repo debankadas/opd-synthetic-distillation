@@ -1,0 +1,36 @@
+{
+  "domain_name": "insurance_claims",
+  "description": "Custom domain for insurance claims processing",
+  
+  "reasoning_tasks": {
+    "claim_assessment": 3.0,
+    "fraud_detection": 2.5,
+    "policy_interpretation": 2.0,
+    "damage_evaluation": 1.5
+  },
+  
+  "dialogues": [
+    "claims_adjuster",
+    "customer_inquiry",
+    "policy_explanation",
+    "settlement_negotiation"
+  ],
+  
+  "instructions": {
+    "claims_processing": [
+      "initial_review",
+      "documentation_verification",
+      "settlement_calculation"
+    ],
+    "customer_service": [
+      "claim_status_inquiry",
+      "policy_questions",
+      "dispute_resolution"
+    ],
+    "analysis": [
+      "risk_assessment",
+      "fraud_investigation",
+      "loss_estimation"
+    ]
+  }
+}

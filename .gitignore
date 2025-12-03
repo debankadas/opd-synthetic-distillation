@@ -1,0 +1,34 @@
+# Byte-compiled / caches
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.env
+.venv/
+venv/
+env/
+
+# IDE / tooling
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Local data and model artifacts
+synthetic_datasets/
+outputs/
+runs/
+reports/
+models/
+models_cache/
+
+# Checkpoints / logs
+*.ckpt
+*.log
+
+# Python packaging
+build/
+dist/
+*.egg-info/

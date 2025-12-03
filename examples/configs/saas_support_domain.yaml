@@ -1,0 +1,30 @@
+domain_name: saas_technical_support
+description: Custom domain for SaaS product technical support
+
+reasoning_tasks:
+  troubleshooting_logic: 3.0
+  api_debugging: 2.5
+  integration_issues: 2.0
+  performance_optimization: 1.5
+
+dialogues:
+  - technical_support_chat
+  - developer_assistance
+  - onboarding_help
+  - feature_consultation
+
+instructions:
+  technical_guidance:
+    - api_integration
+    - sdk_usage
+    - authentication_setup
+  
+  troubleshooting:
+    - error_diagnosis
+    - log_analysis
+    - configuration_review
+  
+  documentation:
+    - api_documentation
+    - code_examples
+    - best_practices
