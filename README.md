@@ -37,7 +37,7 @@ An end-to-end framework that pairs GOLD-style on-policy distillation with synthe
 ### 1. Set up environment
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/debankadas/opd-synthetic-distillation
 cd OPD
 pip install -r requirements.txt
 cp .env_example .env  # or: copy .env_example .env on Windows
