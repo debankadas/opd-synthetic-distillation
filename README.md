@@ -4,7 +4,9 @@
 
 # On-Policy Distillation with Synthetic Data Generation
 
-An end-to-end framework that pairs GOLD-style on-policy distillation with synthetic data generation so you can train smaller students from stronger teachers using minimal manual data.
+Shrink big LLMs into efficient small models — without losing their behavior.
+
+An end-to-end framework that pairs GOLD-style on-policy distillation with synthetic data generation, allowing you to train smaller students from stronger teachers with minimal manual data.
 
 ## Quick Links
 
@@ -16,30 +18,40 @@ An end-to-end framework that pairs GOLD-style on-policy distillation with synthe
 
 ## What This Repo Gives You
 
-- ✔ A full OPD training loop (GOLD-style)  
-  The student generates → teacher scores → GOLD loss updates the student.
+- ✔ Full OPD loop (GOLD-style)  
+  Student generates → teacher scores → GOLD loss updates the student.
 - ✔ Built-in synthetic data generator  
-  OpenAI + NVIDIA NeMo support out of the box. Useful for bootstrapping reasoning/instruction/mixed datasets before training.
-- ✔ Multiple teacher backends (plug and play)  
-  OpenRouter API (lightweight & cheap) • llama.cpp GGUF models • Full Hugging Face models (GPU recommended)
+  OpenAI + NVIDIA NeMo support. Bootstrap reasoning/dialogue/instruction data instantly.
+- ✔ Multiple teacher backends (plug-and-play)  
+  OpenRouter API · llama.cpp GGUF models · Full HuggingFace models.
 - ✔ Evaluation scripts & reporting  
-  Quick way to compare: baseline small model, distilled student, teacher outputs.
-- ✔ Configurable via environment variables  
-  No rewriting loops. No fighting with giant config files.
+  Compare baseline vs distilled student vs teacher outputs.
+- ✔ Env-driven configuration  
+  No giant config files. No rewriting loops for new runs.
 
 ## 🧠 High-Level Flow (The Story of a Distillation Run)
 
-1. Start with a few seed examples — your domain, your prompts, your tasks.
-2. Generate synthetic data using a powerful teacher — the teacher expands the tiny seed set into a rich dataset.
-3. Run the OPD loop
-   - Student produces rollouts
-   - Teacher scores them
-   - GOLD loss emphasizes tokens that match “good” behavior
-4. Train until stable — smaller checkpoints go into your `OUTPUT_DIR`.
-5. Run evaluation — see how the distilled model stacks against baseline or teacher.
-6. (Optional) Inspect data quality — validate synthetic samples with teacher scoring.
+1) Start with a few seed examples  
+   Your tasks, your domain, your prompts.
 
-This gives you a tiny, fast, domain-aligned model that behaves like the big one—without the cost.
+2) Generate synthetic data from a strong teacher  
+   The teacher grows a tiny seed dataset into a rich training corpus.
+
+3) Run the OPD loop  
+   - Student produces rollouts  
+   - Teacher scores them  
+   - GOLD loss emphasizes “good” tokens based on teacher scores
+
+4) Train until stable  
+   Student checkpoints appear under `OUTPUT_DIR/`.
+
+5) Evaluate  
+   Compare distilled performance against teacher and baseline.
+
+6) (Optional) Validate data quality  
+   Inspect synthetic samples and teacher scoring.
+
+Result: a small, fast, domain-aligned model that behaves like the big one — but costs a fraction.
 
 ## 🏁 Quick Start
 
